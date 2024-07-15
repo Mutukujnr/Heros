@@ -127,9 +127,10 @@
         </div>
 
         <div>
-          <form class="container row">
+          <form action="https://api.web3forms.com/submit" method="POST" class="container row">
             <div class="col-lg-6 col-12">
               <div class="form-group">
+                <input type="hidden" name="access_key" value="dd69c17b-c0f5-44aa-98a4-103f010ca119">
                 <label for="name">Name <small>*</small></label>
                 <input
                   id="name"
@@ -346,7 +347,7 @@
         </div>
       </div>
     </footer>
-    <script src="https://smtpjs.com/v3/smtp.js">
+    
     </script>
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
@@ -355,48 +356,6 @@
     <script src="assets/js/owl.carousel.min.js"></script>
     <script src="assets/js/owl.carousel.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script>
-      const form = document.querySelector('form');
-
-      const fullname = document.getElementById("name");
-      const email = document.getElementById("email");
-      const subject = document.getElementById("subject");
-      const phone = document.getElementById("phone");
-      const message = document.getElementById("message");
-
-      function sendEmail() {
-        const bodyMesage = `fullname: ${fullname.value}<br>
-email: ${email.value}<br>
-subject: ${subject.value}<br>
-phone: ${phone.value}<br>
-messsge: ${message.value}<br>`;
-
-        Email.send({
-          Host: "smtp.elasticemail.com",
-          Username: "mutukujuniour@gmail.com",
-          Password: "74945EBB01AF9F68EEC25585AC91A8208E0C",
-          To: "mutukujuniour@gmail.com",
-          From: "mutukujuniour@gmail.com",
-          Subject: subject.value,
-          Body: bodyMesage,
-        }).then((message) => {
-          if (message == "OK") {
-            swal.fire({
-              title: "success",
-              text: "message send successfully",
-              icon: "success",
-            });
-          }
-        });
-      }
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        sendEmail();
-      });
-    </script>
+    
   </body>
 </html>
